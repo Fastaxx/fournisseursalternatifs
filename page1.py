@@ -6,8 +6,7 @@ def app():
     st.title("Volume d'échanges ARENH")
 
     data = pd.read_csv('HistoriquevolumesARENH.csv', sep=';', index_col=0, parse_dates=True)
-    
-    st.line_chart(data)
+    demande = data[["Demande ARENH", "Plafond ARENH"]]
 
-    st.write("42 €/MWh")
+    st.line_chart(demande)
 
